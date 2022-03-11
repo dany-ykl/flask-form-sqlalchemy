@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    {% block content %}
+    <h2>Form using models</h2>
+    <a href="{{url_for('insert')}}">edit datasources insert</a>
+    {% for auth in auth_type %}
+        <p>{{auth}}</p>
+    {% endfor %}
+    {% for i in datasources %}
+        <p>{{i.guid}}:{{i.description}}</p>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
